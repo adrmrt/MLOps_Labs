@@ -65,13 +65,25 @@ pip install deepchecks
 
 but you don't have to do that because we already took care of installing it for you in the environment.
 
-Deepchecks comes with pre-built suites for tabular, nlp, and vision tasks. For each task, there are three suites available:
+Deepchecks comes with pre-built suites for _tabular_, _nlp_, and _vision tasks_. For each task, there are three suites available:
 
 - `data_integrity`: A suite to detect data integrity issues like missing labels, duplicates, or conflicting labels.
 - `train_test_validation`: A suite for validating the correctness of train-test split, including distribution, leakage and integrity checks.
 - `model_evaluation`: A suite for evaluating the model's performance over different metrics, segments, error analysis, examining overfitting, comparing to baseline, and more.
 
-Of course, you can write your own checks and suites if you chose so. Here we are going to use one of Deepchecks' prebuilt suites to test a computer vision model.
+Of course, you can write your own checks and suites if you chose so. You can also implement new tasks - but more on this later. Here we are going to use one of Deepchecks' prebuilt suites to test a computer vision model.
+
+In `lab04/deepchecks_intro` you find a small demo project that trains a binary classification (Ants vs Bees) model on the  `hymenoptera` dataset that you have already encountered in the first lab. The project consists of the following files:
+
+- `data.py`: Downloads and unpacks the training data.
+- `train.py`: Trains the model.
+- `test.py`: Runs the deepchecks test suite.
+
+Take a quick look a `data.py` and `train.py` - nothing should surprise you.
+
+Next, let's take a detailed look at `test.py`.
+
+TODO
 
 ---
 

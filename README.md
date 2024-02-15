@@ -29,3 +29,33 @@ So, for the first lab this command becomes:
 ```shell
 conda activate mlops-lab-01
 ```
+
+### Running Notebooks
+
+Most labs will make use of [Jupyter Notebooks](https://jupyter.org/), which you can either run locally or on Google Colab. There are of course many other ways to run them, and you are free to use whichever tool and setup you want, but we cannot guarantee compatibility.
+
+Below we show you two ways of running the lab notebooks that are known to work.
+
+#### Running locally
+
+To run notebooks locally, proceed as follows:
+
+1. Open a terminal and navigate to the lab directory (e.g. `lab01`).
+2. Activate the conda environment for this labe (e.g. `mlops-lab-01`).
+3. Run `jupyter lab`. This will result in output similar to the following:
+
+```shell
+
+    To access the server, open this file in a browser:
+        file:///some/long/path/here/jpserver-74325-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=token
+        http://127.0.0.1:8888/lab?token=token
+```
+
+4. Click on or copy the link and past it in your browser.
+5. Now, click on the jupyter notebook of your liking.
+
+#### Running in Google Colab
+
+TODO !

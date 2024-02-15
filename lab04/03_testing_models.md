@@ -55,7 +55,23 @@ Luckily, there are tools that give you a helping hand when it comes to creating 
 
 ### Testing models with Deepchecks
 
-Deepchecks implements _test suites_ for your models. A test suite consists of one or more _checks_. 
+Deepchecks implements _test suites_ for your models. A test suite consists of one or more _checks_.
+
+As almost any other package, you install `deepchecks` via `pip`:
+
+```shell
+pip install deepchecks
+```
+
+but you don't have to do that because we already took care of installing it for you in the environment.
+
+Deepchecks comes with pre-built suites for tabular, nlp, and vision tasks. For each task, there are three suites available:
+
+- `data_integrity`: A suite to detect data integrity issues like missing labels, duplicates, or conflicting labels.
+- `train_test_validation`: A suite for validating the correctness of train-test split, including distribution, leakage and integrity checks.
+- `model_evaluation`: A suite for evaluating the model's performance over different metrics, segments, error analysis, examining overfitting, comparing to baseline, and more.
+
+Of course, one can write their own checks and suites.
 
 ---
 

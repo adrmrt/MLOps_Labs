@@ -71,7 +71,7 @@ Deepchecks comes with pre-built suites for tabular, nlp, and vision tasks. For e
 - `train_test_validation`: A suite for validating the correctness of train-test split, including distribution, leakage and integrity checks.
 - `model_evaluation`: A suite for evaluating the model's performance over different metrics, segments, error analysis, examining overfitting, comparing to baseline, and more.
 
-Of course, one can write their own checks and suites.
+Of course, you can write your own checks and suites if you chose so. Here we are going to use one of Deepchecks' prebuilt suites to test a computer vision model.
 
 ---
 

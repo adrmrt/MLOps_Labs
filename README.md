@@ -2,6 +2,18 @@
 
 This is the repository for the labs/tutorials of the lecture Machine Learning Operations (MLOps), ZHAW BSc Computer Science & Data Science.
 
+## Table of Contents
+
+| Lab    | Contents                                                                                      | Link              |
+| ------ | --------------------------------------------------------------------------------------------- | ----------------- |
+| Lab 01 | Deep Learning recap: PyTorch, CNNs, Transformers                                              | [Lab 01](lab01/README.md) |
+| Lab 02 | A chatbot with 🤗 Transformers and Streamlit                                                  | [Lab 02](lab02/README.md) |
+| Lab 03 | Experiment management and hyperparameter tuning your own diffusion model.                     | [Lab 03](lab03/README.md) |
+| Lab 04 | CI/CD for code, models, and data.                                                             | [Lab 04](lab04/README) |
+| Lab 05 | _Coming soon_                                                                                 | [Lab 05](lab05/README.md) |
+| Lab 06 | From notebooks to pipelines to batch processing: A coffee analytics case study in three acts. | [Lab 06](lab06/README.md) |
+| Lab 07 | _Coming soon_                                                                                 | [Lab 07](lab07/README.md) |
+
 ## Setup
 
 We use `conda` environments to manage the lab dependencies. Every lab has its own conda environment. Install [Anaconda](https://www.anaconda.com/download/), [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html) or [Mamba](https://mamba.readthedocs.io/en/latest/) for your platform.
@@ -62,22 +74,22 @@ TODO: Paste actual PAT!
 
 1. Navigate your browser to [colab.research.google.com](colab.research.google.com).
 2. When prompted to open a notebook, select **GitHub**
-![Colab "Open Repo" dialogue](imgs/colab_open_repo.png)
+   ![Colab "Open Repo" dialogue](imgs/colab_open_repo.png)
 3. Copy the following URL into the search bar: `https://token@github.com/bil-y/MLOps_Bsc`.
 4. The screen should now look something like the image below:
-![Colab "Open Repo" dialogue pt. 2](imgs/colab_open_repo_with_repos.png)
+   ![Colab "Open Repo" dialogue pt. 2](imgs/colab_open_repo_with_repos.png)
 5. Select the notebook you want to open.
 6. Once your notebook is open, add a code cell at the very top. You can do this, hover your cursor over the top of the notebook like in the image below:
-![Colab hover](imgs/colab_hover.png)
+   ![Colab hover](imgs/colab_hover.png)
 
 7. In the code cell, add the following:
 
- ```shell
- !git clone https://token@github.com/bil-y/MLOps_Bsc
- %cd MLOps_Bsc/path/to/notebook
- ```
+```shell
+!git clone https://token@github.com/bil-y/MLOps_Bsc
+%cd MLOps_Bsc/path/to/notebook
+```
 
 where you replace `path/to/notebook` with the path to the jupyter notebook you just opened. For instance, if you opened `lab01a.ipynb`, the statement would become `%cd MLOps_Bsc/lab01`.
 
 8. Connect to a GPU by changing the runtime type:
-![Change Colab runtime](imgs/colab_change_runtime_type.png)
+   ![Change Colab runtime](imgs/colab_change_runtime_type.png)

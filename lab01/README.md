@@ -12,6 +12,15 @@ If you are already familiar with PyTorch, start directly with Labs 1b and 1c. Th
 | 1b | Convolutional Neural Networks | [lab01b](./lab01b.ipynb) |
 | 1c | Transformers | [lab01c](./lab01c.ipynb) [(Solution)](./lab01c_sol.ipynb) |
 
+## Further reading
+
+"PyTorch" isn't just the `torch` package - it's a whole ecosystem! Here are a few libraries that might be of interest:
+
+- [`PyTorch Lightning`](https://lightning.ai/docs/pytorch/stable/), a high-level framework built on top of PyTorch.
+- [`PyTorch Ignite`](https://pytorch-ignite.ai/), a "high-level library to help with training and evaluating neural networks in PyTorch flexibly and transparently."
+
+You can explore the whole ecosystem over on the [PyTorch Ecosystem Page](https://pytorch.org/ecosystem/)! Some of the libraries and tools listed might act as inspiration for your MLOps project later in the semester.
+
 [1]: ./lab01a_01_tensor_tutorial.ipynb
 [2]: ./lab01a_02_autograd_tutorial.ipynb
 [3]: ./lab01a_03_neural_networks_tutorial.ipynb

@@ -228,15 +228,89 @@ Now it's your turn: Combine your knowledge from the previous parts and implement
 
 ## Testing beyond performance
 
-There are _many_ more things that a model should be tested on.
+Predictive performance is not the only property that matters. In fact, there are _many_ more things that a model can and should be tested on. Testing for properties like explainability, robustness, or fairness is crucial before a model can be brought into contact with the real world.
 
-TODO: Finish this
+Here, we are going to test a model's robustness to perturbations. We will do this by performing _adversarial attacks_.
+
+Adversarial examples are inputs to machine learning models that are designed to cause the model to make a mistake, they’re like optical illusions for machines. A frequently cited example is the following image from [Explaining and Harnessing Adversarial Examples](https://arxiv.org/abs/1412.6572):
+
+![Panda Attack](imgs/panda_attack.png)
+
+An attacker adds a small amount of noise to an image and passes it to the neural network, which causes the model to mistake the panda for a gibbon (note the high confidence!). There exist _numerous_ methods for constructing adversarial examples. Here, we'll use the same method that was also used to create the example above, the _Fast Gradient Sign Method_ (FGSM).
+
+The idea behind FGSM is simple: We do the opposite of gradient descent. That is, we evaluate the model for some input, compute the loss function, and then take the gradient with respect to the input. Instead of moving in the direction that minimizes the gradient, we aim to _maximize_ it.  Mathematically, this looks as follows. First, we compute the perturbation $\eta$:
+
+$$\eta = \epsilon \cdot \operatorname{sign}(\nabla_x L(\operatorname{NN}_w(x), y))$$
+
+Here, $L$ denotes the loss function.
+Then, the adversarial example is obtain by adding the perturbation to the input:
+
+$$\tilde{x} = x + \eta$$
+
+In PyTorch code, the procedure looks as follows:
+
+```python
+def fgsm_attack(x, epsilon):
+    x_tilde = x + epsilon * x.grad.data.sign()
+    x_tilde = torch.clamp(x, 0, 1)
+    return x_tilde
+```
+
+To attack a model, you can use `fgsm_attack` like in the example below.
+
+```python
+epsilon = 1e-4
+image, label  = ... # Get image and label from somewhere.
+output = model(image)
+
+# This could be any loss function.
+loss = F.nll_loss(output, label)
+model.zero_grad()
+loss.backward()
+
+# Attack!
+perturbed_image = fgsm_attack(image, epsilon)
+perturbed_output = model(perturbed_image)
+```
+
+### A custom deepchecks check
+
+As mentioned previously, you can extend deepchecks with your own checks and suites. In the final part of this lab, you are going to develop a check that tests a model's robustness to adversarial attacks.
+
+In deepchecks, `Check`s are child classes that inherit form one of multiple check base classes.
+The first step when writing a check is to decide which of the built-in deepcheck check base class to use. You can read more in the [Base Checks Types section](https://docs.deepchecks.com/stable/vision/auto_tutorials/other/plot_custom_checks.html#base-checks-types) of their docs. In our case, we want a check the uses both the model and the data, so we will be using the `SingleDatasetCheck`. This base class requires us to implement
+
+- `initialize_run`, which initializes the run before starting updating on batches. Optional.
+- `update`, which is used for actions that are to be performed on each batch. This method is intended to update the internal state of the check.
+- `compute`, which computes the final check result based on accumulated internal state.
+
+#### Helper classes
+
+The three methods of the check - `initialize_run`, `update` and `compute`, utilize the `Context` and `Batch` objects.
+
+The `Context` object contains the basic objects deepchecks uses - the train and test VisionData objects, and the use model itself. The `Batch` objects contains processed data from the dataloader, such as the images, labels and model predictions.
+
+For more examples of using the Context and Batch objects for different types of base checks, see the Custom Check Templates guide.
+
+You can find a skeleton in `deepchecks_advanced/check_attack.py`. Follow the instructions given in the file to implement the check.
 
 ---
 
+## Further reading
+
+### More on adversarial attacks
+
+If you would like to learn more about adversarial attacks, we recommend the [Adversarial Machine Learning Reading List](https://nicholas.carlini.com/writing/2018/adversarial-machine-learning-reading-list.html) by Nicholas Carlini, a leading research on this topic.
+
+### More on testing beyond performance
+
+As mentioned above, predictive performance is not the only property that matters. If you would like to see a concrete
+
+### Improved Tooling for continuous integration and delivery of machine learning models
+
 The final two sections introduce you to two tools that enhance CI/CD pipelines for machine learning systems.
 
-## Continuous machine learning with CML
+####  Continuous machine learning with CML
 
 [Continuous Machine Learning (CML)](https://cml.dev) is a tool that extends common CI/CD solutions (GitHub Actions, GitLab CI/CD, and even Bitbucket Pipelines) to machine learning. The idea behind CML is that you use the CI/CD pipeline for training and evaluating your models in the same way that you use them to build and test your code. The `deepchecks` pipeline from above could be enhanced as follows:
 
@@ -289,7 +363,10 @@ The only part where CML really comes into play here is the last step: CML makes 
 [CML also comes with utilities to launch dedicated runners](https://cml.dev/doc/ref/runner) for the workflow - this is especially useful when using CML for neural networks as GitHub's runners do not come with GPUs.
 However, the tool introduced next sections specializes in this discipline!
 
-## SkyPilot: Abstract away the infrastructure
+#### SkyPilot: Abstract away the infrastructure
+
+GitHub's runners don't have GPUs, so training neural networks in the GitHub Actions CI/CD is not possible.
+You could of course host your own runner on some server with GPUs. This can be very cumbersome when done manually. _SkyPilot_ is a tool that can help you overcome this issue.
 
 In their own words,
 > SkyPilot is a framework for running LLMs, AI, and batch jobs on any cloud, offering maximum cost savings, highest GPU availability, and managed execution.

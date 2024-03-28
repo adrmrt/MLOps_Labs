@@ -2,6 +2,8 @@
 
 In the previous part, we discussed serving a model. In this section, we will discuss how to protect our model in the real world. We will discuss how to detect outliers, adversarial attacks, and drift.
 
+_Note: If you are in a hurry, you can obtain the weights for the models that we train in this part from [here](https://drive.switch.ch/index.php/s/7B5ksEnpmvIOQAn)._
+
 ## Outlier Detection
 
 Outliers are data points that are different from other data points. They can be caused by errors in data collection or can be indicative of some new trends in the data. Outliers can significantly affect the performance of machine learning models. Therefore, it is important to detect and handle outliers.

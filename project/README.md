@@ -2,9 +2,9 @@
 
 ## MLOps Project Ideas
 
-As many of you are likely working on your Bachelor Thesis, we have a straightforward idea for you: Implement a MLOps pipeline for your thesis project! Gone are the days of manually running your models on your local machine. Instead, you can now use the power of the cloud to track your experiments, store your data, and deploy your models. Not working on a thesis or looking for a break from it? No problem! We have a few ideas for you as well:
+As many of you are likely working on your Bachelor Thesis, we have a straightforward idea for you: Implement a MLOps pipeline for your thesis project! Gone are the days of manually running your models on your local machine. Instead, you can now use the power of the cloud to track your experiments, store your data, and deploy your models.
 
-1. **MLOps for your favorite Kaggle competition**: Pick a Kaggle competition you like and implement a MLOps pipeline for it. This can include data versioning, model tracking, and deployment.
+If you want to do something else, no problem!
 
 ### Recommended Cloud Setup
 
@@ -31,7 +31,9 @@ For everything that goes beyond a simple VM, the Google Cloud Platform documenta
 
 ### MLOps Tools
 
-As with the cloud setup, you are free to choose the tools you want to use. The tools introduced in the course are a good starting point, but there are many more out there. For an overview over some of the most popular tools, check out [MLOps Toys](https://mlops.toys/). Many tools come with instruction on how to set them up in the cloud, so you should be able to find a guide for your tool of choice.
+As with the cloud setup, you are free to choose the tools you want to use. The tools introduced in the course are a good starting point, but there are many more out there. For an overview over some of the most popular tools, check out [MLOps Toys](https://mlops.toys/) and the [Linux Foundation AI & Data Landscape](https://landscape.lfai.foundation/). Many tools come with instruction on how to set them up in the cloud, so you should be able to find a guide for your tool of choice.
 
 > [!WARNING]
 > We cannot provide support for all tools under the sun. We may assist you with the tools we have introduced in the course, but we cannot you with other tools. Please do not contact the TA or lecturer regarding tools we have not introduced in the course.
+
+In any case, we recommend using the ![MLOps Stack Template](imgs/template.png) to organize your tools. The template is available from [here](https://valohai.com/blog/the-mlops-stack/).

@@ -80,11 +80,15 @@ The way the methods are implemented shouldn't astonish you, it's really just wha
 on the documentation page for [`tiny_vit_5m_224.dist_in22k`](https://huggingface.co/timm/tiny_vit_5m_224.dist_in22k).
 What _is_ interesting is the `@decode_args` decorator just before `predict`.
 
-Machine learning models generally expect their inputs to be passed as a particular type. These types range from common formats
-like NumPy arrays to more esoteric types like Pillow images (as is the case in our implementation). Clearly,
-a protocol like the one that `MLServer` uses cannot cover all possible Python types.
+Machine learning models generally expect their inputs to be passed as a particular type. These types range from common formats like NumPy arrays to more esoteric types like Pillow images (as is the case in our implementation). Clearly, a protocol like the one that `MLServer` uses cannot cover all possible Python types.
 
-TODO: Discuss protocol and codecs here.
+#### Excursion: Codecs
+
+MLServer uses codecs to encapsulate the encoding and decoding logic for different data types. Codecs are an abstraction which know how to encode and decode high-level Python types. Here, MLServer follows the [Open Inference Protocol](https://docs.seldon.io/projects/seldon-core/en/latest/reference/apis/v2-protocol.html), an industry-wide effort to provide a standardized protocol to communicate with different inference servers and orchestrating frameworks.
+
+Unless you want to use custom data types (which is not recommended unless you have a really good reason), you don't have to worry about codecs. MLServer comes with a set of built-in codecs that cover most common data types. The `@decode_args` decorator does the heavily lifting for you. Based on the information provided in the method signature, it will automatically decode the request payload and pass it to the method. It also takes care of encoding the response.
+
+If you want to learn more about codecs, we recommend reading up on the [Open Inference Protocol](https://docs.seldon.io/projects/seldon-core/en/latest/reference/apis/v2-protocol.html) and the [MLServer documentation on codecs](https://mlserver.readthedocs.io/en/latest/user-guide/content-type.html).
 
 #### `model-settings.json`
 
@@ -195,6 +199,11 @@ To access the response we get from `MLServer`, you can access the `JSON` as a Py
 ```python
 res.json()
 ```
+
+#### Excursion: Where are the API docs?
+
+You might be wondering where the API documentation is. Strangely, the `MLServer` docs don't mention it. 🤔
+Well, there is actually no need for it! The API is standardized and follows the [Open Inference Protocol](https://docs.seldon.io/projects/seldon-core/en/latest/reference/apis/v2-protocol.html). What's more, the API is self-documenting. You can find the API documentation by navigating to `http://localhost:8080/v2/docs` (if you changed the port MLServer is listening on, adjust it accordingly) in your browser.
 
 #### Your turn
 
@@ -389,7 +398,7 @@ We can go one step further and package our service into a Docker container. This
 To do this, all we need is a `requirements.txt` file. This file should contain all the dependencies required to run our service. In our case, we can simply export the `env.yaml` file we used to create our environment and add it to `lab07/tinyvit`.
 
 ```shell
-mamba list -e > requirements.txt
+conda list -e > requirements.txt
 ```
 
 Then, use `mlserver build` to build the Docker image.

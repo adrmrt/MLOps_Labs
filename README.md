@@ -1,19 +1,18 @@
 # MLOps
 
-This is the repository for the labs/tutorials of the lecture Machine Learning Operations (MLOps), ZHAW BSc Computer Science & Data Science.
+This is the repository for the labs/tutorials of the lecture Machine Learning Operations (MLOps), ZHAW.
 
 ## Table of Contents
 
-| Week | Contents | Tools | Link |
+| Lab No. | Contents | Tools | Link |
 | ---- | -------- | ----- | ---- |
-|   1  |  _No Lab_ |   -    |   -   |
-|   2  | Deep Learning Recap | PyTorch, CNNs, Transformers | [Lab 01](lab01/README.md) |
-|   3  | Prompt engineering a chatbot  | 🤗 Transformers, Streamlit | [Lab 02](lab02/README.md) |
-|   4  | Experiment management and hyperparameter tuning | MLflow, Ray Tune | [Lab 03](lab03/README.md) |
-|   5  | CI/CD  and testing for code and models | GitHub Actions, PyTest, DeepChecks | [Lab 04](lab01/README.md) |
-|   6  | From notebooks to pipelines to batch processing | Jupyter, Ploomber, Airflow | [Lab 05](lab05/README.md) |
-|   7  | Data-centric MLOps | Git LFS, DVC, Albumentations, diffusers | [Lab 06](lab06/README.md) |
-|   8  | Deploying and protecting machine learning models | ??? | [Lab 07](lab07/README.md) |
+|   1  | Deep Learning Recap | PyTorch, CNNs, Transformers | [Lab 01](lab01/README.md) |
+|   2  | Prompt engineering a chatbot  | 🤗 Transformers, Streamlit | [Lab 02](lab02/README.md) |
+|   3  | Experiment management and hyperparameter tuning | MLflow, Ray Tune | [Lab 03](lab03/README.md) |
+|   4  | CI/CD  and testing for code and models | GitHub Actions, PyTest, DeepChecks | [Lab 04](lab01/README.md) |
+|   5  | From notebooks to pipelines to batch processing | Jupyter, Ploomber, Airflow | [Lab 05](lab05/README.md) |
+|   6  | Data-centric MLOps | Git LFS, DVC, Albumentations, diffusers | [Lab 06](lab06/README.md) |
+|   7  | Deploying and protecting machine learning models | MLServer, Alibi Detect | [Lab 07](lab07/README.md) |
 
 ## Setup
 
@@ -74,7 +73,7 @@ To run notebooks locally, proceed as follows:
 In the instructions below, replace `token` with
 
 ```raw
-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
+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
 ```
 
 1. Clone or download this repository.
@@ -87,10 +86,10 @@ github_pat_11BCJDENQ0twicGNfopLWb_XRsTSYrE0mfBSJIJPbwEdXaf2YWJ62k5igixv1ufzEFSA5
 6. In the code cell, add the following:
 
 ```shell
-!git clone https://token@github.com/bil-y/MLOps_BSc
-%cd MLOps_Bsc/path/to/notebook
+!git clone https://token@github.com/bil-y/MLOps_Labs
+%cd MLOps_Labs/path/to/notebook
 ```
 
-where you replace `path/to/notebook` with the path to the jupyter notebook you just opened. For instance, if you opened `lab01a.ipynb`, the statement would become `%cd MLOps_Bsc/lab01`.
+where you replace `path/to/notebook` with the path to the jupyter notebook you just opened. For instance, if you opened `lab01a.ipynb`, the statement would become `%cd MLOps_Labs/lab01`.
 7. Connect to a GPU by changing the runtime type:
    ![Change Colab runtime](imgs/colab_change_runtime_type.png)

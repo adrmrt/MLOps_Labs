@@ -10,7 +10,7 @@ To bring you up to speed with `transformers`, we have prepared a notebook for yo
 Afterwards, you will learn how to build beautiful UIs for you data science application using `streamlit`!
 
 | Part | Topic | Link |
-|:---:|:---:|:---:|
+|:---:|:---|:---|
 | 2a | LLMs with `transformers` | [transformers.ipynb](notebooks/transformers.ipynb) ([solution](notebooks/transformers_solution.ipynb)) |
 | 2b | UIs with `streamlit` | [streamlit_uis.md](./streamlit_uis.md) |
 | 2c | Chatbots with `streamlit` | [streamlit_chatbot.md](./streamlit_chatbot.md) |

@@ -7,7 +7,7 @@ If you have never worked with PyTorch before or need to refresh your memory on h
 If you are already familiar with PyTorch, start directly with Labs 1b and 1c. This week's labs are intended to be run in Google Colab or your own device using Jupyter.
 
 | Lab | Topic | Link |
-|:---:|:---:|:---:|
+|:---:|:---|:---|
 | 1a | Deep Learning with PyTorch: A 60 Minute Blitz  (Tensors, Autograd, NNs, Classifiers) | [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] |
 | 1b | Convolutional Neural Networks | [lab01b](./lab01b.ipynb) |
 | 1c | Transformers | [lab01c](./lab01c.ipynb) [(Solution)](./lab01c_sol.ipynb) |

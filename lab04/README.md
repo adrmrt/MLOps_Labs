@@ -6,7 +6,7 @@ We will be using [GitHub Actions](https://docs.github.com/en/actions) and [Conti
 This lab is divided into multiple parts:
 
 |  Lab Part  | Description |
-|------------|-------------|
+|:------------|:-------------|
 | [Part 1](01_introduction_to_cicd.md) | Introduction CI/CD with GitHub Actions |
 | [Part 2](02_introduction_to_pytest.md) | Introduction to unit testing with `pytest` |
 | [Part 3](03_testing_models.md) | Testing machine learning models |

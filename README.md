@@ -73,12 +73,6 @@ To run notebooks locally, proceed as follows:
 
 #### Running in Google Colab
 
-In the instructions below, replace `token` with
-
-```raw
-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
-```
-
 1. Clone or download this repository.
 2. Navigate your browser to [colab.research.google.com](colab.research.google.com).
 3. In the menu, select `File > Upload notebook`
@@ -89,10 +83,11 @@ github_pat_11BCJDENQ0S9Ks55YIUe7d_MTNrzaL6mtB8OcokrSRiZU8u3zUCMHvWRLZU8stliaZ2VM
 6. In the code cell, add the following:
 
 ```shell
-!git clone https://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@github.com/bil-y/MLOps_Labs
+!git clone https://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@github.com/bil-y/MLOps_Labs
 %cd MLOps_Labs/path/to/notebook
 ```
 
 where you replace `path/to/notebook` with the path to the jupyter notebook you just opened. For instance, if you opened `lab01a.ipynb`, the statement would become `%cd MLOps_Labs/lab01`.
+
 7. Connect to a GPU by changing the runtime type:
    ![Change Colab runtime](imgs/colab_change_runtime_type.png)

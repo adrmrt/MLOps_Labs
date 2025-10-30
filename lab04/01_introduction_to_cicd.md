@@ -87,7 +87,7 @@ Now that you've seen what a workflow looks like, it is time to build your own. I
 
 ## Setup
 
-Unfortunately, GitHub Actions are disabled on the ZHAW GitHub instance. For simplicity, we are going to use `act`, a local runner / emulator for GitHub actions, but you are of course free to use [github.com](https://github.com/) if you want to.
+For simplicity, we are going to use `act`, a local runner / emulator for GitHub actions, but you are of course free to use [github.com](https://github.com/) if you want to.
 `act` supports Windows, macOS, and Linux. To install `act`, follow the instructions [here](https://nektosact.com/installation/index.html). `act` requires Docker (or any other container engine) - don't worry, the installation instructions also cover this part and you won't have to interact with docker beyond installing it.
 
 The first time you run `act`, you will be prompted to select a container size. Select `Medium`.
@@ -143,7 +143,7 @@ We can run it with `act` by issuing the following command in the `lab04` directo
 
 ### Your turn: Install dependencies
 
-Copy or modify `lab04/.github/github_actions_intro/workflows/python_demo.yaml`. Add a step that updates `pip`.
+Copy or modify `lab04/github_actions_intro/workflows/python_demo.yaml`. Add a step that updates `pip`.
 
 <details>
   <summary>Hint</summary>

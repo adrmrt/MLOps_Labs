@@ -24,3 +24,6 @@ jobs:
       # Now you can do whatever you want with python:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -r github_actions_intro/requirements.txt
+

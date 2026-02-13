@@ -88,7 +88,9 @@ Now that you've seen what a workflow looks like, it is time to build your own. I
 ## Setup
 
 For simplicity, we are going to use `act`, a local runner / emulator for GitHub actions, but you are of course free to use [github.com](https://github.com/) if you want to.
-`act` supports Windows, macOS, and Linux. To install `act`, follow the instructions [here](https://nektosact.com/installation/index.html). `act` requires Docker (or any other container engine) - don't worry, the installation instructions also cover this part and you won't have to interact with docker beyond installing it.
+`act` supports Windows, macOS, and Linux. To install `act`, follow the instructions [here](https://nektosact.com/installation/index.html).
+
+ `act` requires **Docker** (or any other container engine) - don't worry, the installation instructions also cover this part and you won't have to interact with docker beyond installing it.
 
 The first time you run `act`, you will be prompted to select a container size. Select `Medium`.
 If you are running on macOS with an ARM processor (M1, M2, M3, maybe more by the time you are reading this), you will have to add the flag `--container-architecture linux/amd64` to make the docker happy.
@@ -151,7 +153,8 @@ Copy or modify `lab04/github_actions_intro/workflows/python_demo.yaml`. Add a st
 Add a step that executes the following command:
 
 ```shell
-python -m pip install --upgrade pip
+- name: Update pip
+  run: python -m pip install --upgrade pip
 ```
 
 </details>
@@ -181,3 +184,14 @@ steps:
     do something
     do something else
 ```
+
+<details>
+  <summary>Hint</summary>
+
+Add a step that executes the following command:
+
+```shell
+  - run: python -m pip install -r github_actions_intro/requirements.txt
+```
+
+</details>

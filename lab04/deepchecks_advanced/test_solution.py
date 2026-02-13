@@ -10,7 +10,8 @@ import torchvision
 
 import os
 
-from lab04.deepchecks_advanced.check_attack_solution import FGSMAttackCheck
+#from lab04.deepchecks_advanced.check_attack_solution import FGSMAttackCheck
+from check_attack_solution import FGSMAttackCheck
 from data import AntsBeesDataset
 
 

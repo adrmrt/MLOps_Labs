@@ -39,6 +39,12 @@ def test_answer():
 
 Then, run `pytest` in the same directory. You should see the test case succeed with output similar to the following:
 
+```shell
+cd pytest
+pytest
+```
+
+
 ```raw
 ============================= test session starts ==============================
 collected 1 item

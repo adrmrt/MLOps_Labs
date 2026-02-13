@@ -165,7 +165,7 @@ lab01/cifar_net.pth
 mlartifacts/
 mlruns/
 lab04/bin
-lab04/deepchecks_intro/hymenoptera*
-lab04/deepchecks_intro/report*
+hymenoptera*
+report*
 *.pth
 lab07/notebooks/data/

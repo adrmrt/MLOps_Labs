@@ -11,7 +11,7 @@ This is the repository for the labs/tutorials of the lecture Machine Learning Op
 |   1  | Deep Learning Recap | PyTorch, CNNs, Transformers | [Lab 01](lab01/README.md) |
 |   2  | Prompt engineering a chatbot  | 🤗 Transformers, Streamlit | [Lab 02](lab02/README.md) |
 |   3  | Experiment management and hyperparameter tuning | MLflow, Ray Tune | [Lab 03](lab03/README.md) |
-|   4  | CI/CD  and testing for code and models | GitHub Actions, PyTest, DeepChecks | [Lab 04](lab01/README.md) |
+|   4  | CI/CD  and testing for code and models | GitHub Actions, PyTest, DeepChecks (CML, SkyPilot) | [Lab 04](lab01/README.md) |
 |   5  | From notebooks to pipelines to batch processing | Jupyter, Ploomber, Airflow | [Lab 05](lab05/README.md) |
 |   6  | Data-centric MLOps | Git LFS, DVC, Albumentations, diffusers | [Lab 06](lab06/README.md) |
 |   7  | Deploying and protecting machine learning models | MLServer, Alibi Detect | [Lab 07](lab07/README.md) |

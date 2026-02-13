@@ -69,6 +69,7 @@ if __name__ == "__main__":
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
+            print(epoch,i,loss.detach().numpy())
 
     print("Finished Training")
 

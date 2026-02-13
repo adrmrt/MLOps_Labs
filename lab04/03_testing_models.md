@@ -79,7 +79,12 @@ In `lab04/deepchecks_intro` you find a small demo project that trains a binary c
 - `train.py`: Trains the model.
 - `test.py`: Runs the deepchecks test suite.
 
-Take a quick look a `data.py` and `train.py` - nothing should surprise you.
+Take a quick look a `data.py` and `train.py` - nothing should surprise you. Now train the model:
+
+```shell
+python data.py
+python train.py
+```
 
 Before we can look at the contents `test.py`, we have to introduce you to a standard feature of [PyTorch data loaders](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) that you are perhaps unaware of.
 If you look at the signature
@@ -220,7 +225,17 @@ result = suite.run(test_data, max_samples = 5000)
 ```
 
 Now you show know everything to understand `test.py`. Take a look and run it.
-`test.py` will generate a report for you to inspect! As you can see, the model isn't particularly good - but that's also not the point of this exercise. 😉
+
+
+```shell
+python test.py
+```
+
+`test.py` will generate a report for you to inspect: `report.html`
+
+![Report](imgs/report.png)
+
+As you can see, the model isn't particularly good - but that's also not the point of this exercise. 😉
 
 ### Your turn: Integrate deepchecks into a GitHub Actions Pipeline
 

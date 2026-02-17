@@ -25,8 +25,8 @@ In the first half, we will be using Seldon's open-source `MLServer`, and in the 
 `MLServer` is of course not the only solution for deploying models. Here are a few other solutions:
 
 - [TensorFlow Serving](https://www.tensorflow.org/tfx/guide/serving)
-- [TorchServe](https://pytorch.org/serve/)
-- [KFServer](https://kserve.github.io/website/0.11/)
+- [TorchServe](https://pytorch.org/serve/) (deprecated!)
+- [KFServer](https://kserve.github.io/)
 - [NVIDIA Triton Inference Server](https://www.nvidia.com/en-us/ai-data-science/products/triton-inference-server/)
 - ... and many more!
 

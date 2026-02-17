@@ -11,8 +11,8 @@ Deploying and managing airflow is an art and science of its own, which we invite
 An Airflow deployment has many interacting components, which must have the correct versions. This is why installing Airflow is a bit more involved than a simple `pip install apache-airflow`:
 
 ```shell
-conda create -n lab05airflow python=3.11
-conda activate lab05airflow
+conda create -n mlops-lab-05-airflow python=3.11
+conda activate mlops-lab-05-airflow
 
 AIRFLOW_VERSION=2.10.5
 

@@ -21,7 +21,7 @@ For each of the topics we have prepared separate sections, which you can find be
 |Git LFS| [Click me](./git_lfs.md)|
 |DVC| [Click me](./dvc.md)|
 |More data! (Augmentation by Albumentation)| [Click me](./notebooks/albumentations.ipynb)|
-|Even more data! (Synthetic data)| [Click me](./notebooks/synthetic_data.ipynb) |
+|Even more data! (Synthetic data by HF Diffusers)| [Click me](./notebooks/synthetic_data.ipynb) |
 
 ## Recommended Reading
 
